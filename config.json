@@ -1,0 +1,10 @@
+{
+  "city": "Corning",
+  "region": "USA",
+  "timezone": "US/Eastern",
+  "latitude": 42.15,
+  "longitude": -77.12,
+  "elevation": 284.07,
+  "night": 4000,
+  "day": 6500
+}
