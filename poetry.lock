@@ -1,0 +1,32 @@
+[[package]]
+category = "main"
+description = "Calculations for the position of the sun and moon."
+name = "astral"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "2.1"
+
+[package.dependencies]
+pytz = "*"
+
+[[package]]
+category = "main"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
+optional = false
+python-versions = "*"
+version = "2020.1"
+
+[metadata]
+content-hash = "e5edc0f149bff0c6f03b1fbe0f24ae2e0d576c19448232b96e04f32241fdf9e2"
+python-versions = "^3.8"
+
+[metadata.files]
+astral = [
+    {file = "astral-2.1-py3-none-any.whl", hash = "sha256:95d3ebbc504dfa4dfef032f8e33ceb5718a38a8836f76a8c564e0e3e58fa2460"},
+    {file = "astral-2.1.tar.gz", hash = "sha256:7f57ad3ed2aa00fbed2893d82cdd2000e0723a5dbe167e1b7f847cc555596f65"},
+]
+pytz = [
+    {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},
+    {file = "pytz-2020.1.tar.gz", hash = "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"},
+]

@@ -1,3 +1,4 @@
+from astral.sun import sun
 from datetime import datetime
 import astral
 import json
@@ -13,7 +14,7 @@ if len(sys.argv) < 2:
 with open(sys.argv[1]) as fp:
   config = json.load(fp)
 
-loc = astral.Location()
+loc = astral.LocationInfo()
 loc.name = config['city']
 loc.region = config['region']
 loc.timezone = config['timezone']
@@ -43,7 +44,8 @@ def ease_down(amt, low, high):
 try:
   while True:
     now = tz.localize(datetime.now())
-    suntimes = loc.sun(date=now)
+    # suntimes = loc.sun(date=now)
+    suntimes = sun(loc.observer, date=now)
 
     print('    Now:', now.strftime('%I:%M%P'))
     print('   Dawn:', suntimes['dawn'].strftime('%I:%M%P'))
@@ -79,9 +81,9 @@ try:
       print('evening', fade, '->', temp)
 
     # apply redshift
-    os.system('redshift -O {}'.format(temp))
+    os.system('redshift -P -O {}'.format(temp))
     time.sleep(60)
 
 except KeyboardInterrupt:
   # reset redshift
-  os.system('redshift -O 6500')
+  os.system('redshift -P -O 6500')
